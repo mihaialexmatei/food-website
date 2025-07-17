@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+/* Update the main background */
+.app {
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #a9d99d; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Update content area */
+.content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-layout {
+  position: relative; /* So we can position button relative to this */
+  height: calc(100vh - 80px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hamburger-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #4d336d;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 100;
+  border-radius: 6px; /* Rounded corners like modern buttons */
+  transition: background-color 0.2s ease, transform 0.1s ease; /* Smooth hover animation */
+}
+
+.hamburger-button:hover {
+  background-color: #e8f0e5; /* Light sage background on hover */
+}
+
+.hamburger-button:active {
+  background-color: #d4e3d0; /* Darker sage when pressed */
+  transform: scale(0.95); /* Slightly smaller when pressed */
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+
+.sliding-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #e8f0e5;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.header {
+  background-color: #e8f0e5;
+  border-bottom: 1px solid #d4e3d0;
+  padding: 20px; /* Add padding */
+}
+
+.nav {
+  background-color: #e8f0e5;
+  width: 250px; /* Fixed width for sidebar */
+  padding: 20px; /* Add padding inside */
+}
+
+/* Your voice input section */
+.voice-input-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
+}
+
+/* The triangle button */
+.mic-button {
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: #e8f0e5;
+  cursor: pointer;
+}
+
+/* The big clickable circle */
+.mic-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #4d336d;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.App-link {
-  color: #61dafb;
+/* Guide text */
+.guide-text {
+  font-size: 18px;
+  color: #2d2d2d;
+  margin: 0;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mic-icon {
+  font-size: 80px;
+  color: #e8f0e5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
